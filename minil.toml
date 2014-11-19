@@ -1,0 +1,3 @@
+name="Old"
+[build]
+build_class = "builder::MyBuilder"
