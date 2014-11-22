@@ -12,8 +12,17 @@
 <span ng-show="myForm.name.$error.minlength">TooShoot</span>
 <span ng-show="myForm.name.$error.maxlength">TooLong</span>
 </p>
+<p>School:
+<input type="text" name="school" ng-model="user.school" required ng-minlength="1" ng-maxlength="20"></p>
+<span ng-show="myForm.school.$error.required">Required</span>
+<span ng-show="myForm.school.$error.minlength">TooShoot</span>
+<span ng-show="myForm.school.$error.maxlength">TooLong</span>
+</p>
 <p>Old:
 <input type="number" name="old" ng-model="user.old"></p>
+</p>
+<p>希望時給:
+<input type="number" name="income" ng-model="user.income"></p>
 </p>
 <p>Email:
 <input type="email" name="email" ng-model="user.email"></p>
@@ -21,9 +30,15 @@
 </p>
 <p>
 <input type="radio" ng-model="user.sex" value="man">男性
-<input type="radio" ng-model="user.sex" value="woman">男性
-</p>
+<input type="radio" ng-model="user.sex" value="woman">女性
+</p>Profile:
 <textarea ng-model="user.profile" ng-maxlength="140"></textarea>{{140 - user.profile.length}}
+<p>
+</p>Day:
+<textarea ng-model="user.day" ng-maxlength="140"></textarea>{{140 - user.day.length}}
+<p>
+</p>Teaching:
+<textarea ng-model="user.teaching" ng-maxlength="140"></textarea>{{140 - user.teaching.length}}
 <p>
 <select ng-model="user.pref" ng-options="'label:'+pref for pref in ['kanagawa','tokyo','saitama']" ng-init="user.pref ='kanagawa'">
 </p>
