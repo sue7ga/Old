@@ -18,6 +18,8 @@
     <script src="<: uri_for('/static/js/micro_dispatcher.js') :>"></script>
     <script src="<: uri_for('/static/js/xsrf-token.js') :>"></script>
     <link href="<: static_file('/static/css/main.css') :>" rel="stylesheet" type="text/css" media="screen" />
+    <link href="<: static_file('/static/css/twocolumn.css') :>" rel="stylesheet" type="text/css" media="screen" />
+    <link href="<: static_file('/static/css/table.css') :>" rel="stylesheet" type="text/css" media="screen" />
     <script src="<: static_file('/static/js/main.js') :>"></script>
     <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
     <script src="<: static_file('/static/js/myscript.js') :>"></script>
@@ -34,20 +36,66 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
+                    <li><a href="#">生徒ログイン</a></li>
+                    <li><a href="#">家庭教師ログイン</a></li>
+                    <li><a href="#">家庭教師登録</a></li>
+                    <li><a href="#">生徒登録</a></li>
                 </ul>
             </div>
         </div><!-- /.container -->
     </div><!-- /.navbar -->
     <div class="container">
         <div id="main">
-            <: block content -> { } :>
+<div id="wrapper">
+<div id="header">
+
+
+<!-- タイトル -->
+<p class="logo"><a href="index.html">家庭教師マッチング</a></p>
+<!-- 概要 -->
+<p class="description">このサービスは個人間の家庭教師の先生と生徒をつなぐサイトとなります。</p>
+</div><!-- / header end -->
+
+-<div id="container">
+<div id="contents">
+<!-- パン屑リスト -->
+<p class="topic-path"><a href="../../../index.html">Home</a> &gt; 無料テンプレート</p>
+
+<!-- コンテンツ ここから -->
+    <: block content -> { } :>
+
+<!-- コンテンツ ここまで -->        
+
+</div><!-- / contents end -->
+</div><!-- / container end -->
+
+<div id="sidebar">
+<!-- サイドバー ここから -->
+<p class="sidetitle">保護者の方こちら</p>
+<ul class="localnavi">
+  <li><a href="student/register">生徒登録</a></li>
+  <li><a href="#">生徒ログイン</a></li>
+  <li><a href="#">教師検索</a></li>
+  <li><a href="#">新しく登録される方へ</a></li>
+</ul>
+
+<p class="sidetitle">家庭教師の先生へ</p>
+<ul class="localnavi">
+  <li><a href="#">家庭教師登録</a></li>
+  <li><a href="#">家庭教師ログイン</a></li>
+  <li><a href="#">新しく登録される方へ</a></li>
+</ul>
+<!-- サイドバー ここまで -->
+</div><!-- / sidebar end -->
+<div id="footer">
+<!-- コピーライト -->
+<p>Copyright &copy; *** 著作権表記 ***. All Rights Reserved.</p>
+<p id="cds">CSS Template <a href="http://www.css-designsample.com/">CSSデザインサンプル</a></p>
+</div><!-- / footer end -->
+</div><!-- / wrapper end -->
         </div>
         <footer class="footer">
-            Powered by <a href="http://amon.64p.org/">Amon2</a>
+
         </footer>
     </div>
 </body>
