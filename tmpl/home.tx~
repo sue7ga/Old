@@ -1,0 +1,18 @@
+: cascade "include/layout.tx"
+
+: override content -> {
+ 
+
+<div ng-controller="mainCtrl">
+<p>{{users.length}}users.</p>
+    
+<li ng-repeat="user in users">
+{{user.name}} {{user.score}}
+</li>
+
+
+</div>
+
+
+
+:}

@@ -1,0 +1,7 @@
+var mainCtrl = function(){    
+  $scope.users = [
+    {"name":"taguchi","score":52.22},
+    {"name":"tanaka","score":22.22},
+    {"name":"yamada","score":42.22},
+  ];
+}

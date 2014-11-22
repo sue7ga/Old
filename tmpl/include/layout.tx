@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title><: $title || 'Old' :></title>
@@ -19,11 +19,14 @@
     <script src="<: uri_for('/static/js/xsrf-token.js') :>"></script>
     <link href="<: static_file('/static/css/main.css') :>" rel="stylesheet" type="text/css" media="screen" />
     <script src="<: static_file('/static/js/main.js') :>"></script>
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <script src="<: static_file('/static/js/myscript.js') :>"></script>
+    <script src="<: static_file('/static/js/user.js') :>"></script>
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
-<body>
+<body ng-app="App">
     <div class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">

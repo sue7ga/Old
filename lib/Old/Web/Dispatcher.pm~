@@ -14,6 +14,4 @@ get '/home' => "Root#home";
 
 get '/user' => "Root#user";
 
-get '/setting' => "Root#setting";
-
 1;

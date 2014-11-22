@@ -1,0 +1,47 @@
+: cascade "include/layout.tx"
+
+: override content -> {
+ 
+ <h1>Settings</h1>
+
+<div ng-controller="mainCtrl">
+<form novalidate name="myForm" ng-submit="addUser()">
+<p>Name:
+<input type="text" name="name" ng-model="user.name" required ng-minlength="5" ng-maxlength="8"></p>
+<span ng-show="myForm.name.$error.required">Required</span>
+<span ng-show="myForm.name.$error.minlength">TooShoot</span>
+<span ng-show="myForm.name.$error.maxlength">TooLong</span>
+</p>
+<p>Old:
+<input type="number" name="old" ng-model="user.old"></p>
+</p>
+<p>Email:
+<input type="email" name="email" ng-model="user.email"></p>
+<span ng-show="myForm.email.$error.email">No valid email!</span>
+</p>
+<p>
+<input type="radio" ng-model="user.sex" value="man">男性
+<input type="radio" ng-model="user.sex" value="woman">男性
+</p>
+<textarea ng-model="user.profile" ng-maxlength="140"></textarea>{{140 - user.profile.length}}
+<p>
+<select ng-model="user.pref" ng-options="'label:'+pref for pref in ['kanagawa','tokyo','saitama']" ng-init="user.pref ='kanagawa'">
+</p>
+
+
+<p><input type="submit" value="登録"></p>
+</form>
+<pre>{{user|json}}</pre>
+</form>
+</div>
+
+<script>
+var mainCtrl = function($scope){
+ $scope.addUser = function(){
+ }
+}
+</script>
+
+
+
+:}
