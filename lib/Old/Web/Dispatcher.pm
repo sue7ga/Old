@@ -16,4 +16,6 @@ get '/user' => "Root#user";
 
 get '/setting' => "Root#setting";
 
+post 'hogehoge/hogehoge' => "Root#hogehoge";
+
 1;

@@ -5,9 +5,9 @@
  <h1>Settings</h1>
 
 <div ng-controller="mainCtrl">
-<form novalidate name="myForm" ng-submit="addUser()">
+<form novalidate method="post" name="user" action="<:uri_for('hogehoge/hogehoge'):>">
 <p>Name:
-<input type="text" name="name" ng-model="user.name" required ng-minlength="5" ng-maxlength="8"></p>
+<input type="text" name="name" ng-model="user.name" ng-init="user.name='hoge'" required ng-minlength="5" ng-maxlength="8"></p>
 <span ng-show="myForm.name.$error.required">Required</span>
 <span ng-show="myForm.name.$error.minlength">TooShoot</span>
 <span ng-show="myForm.name.$error.maxlength">TooLong</span>
@@ -42,8 +42,6 @@
 <p>
 <select ng-model="user.pref" ng-options="'label:'+pref for pref in ['kanagawa','tokyo','saitama']" ng-init="user.pref ='kanagawa'">
 </p>
-
-
 <p><input type="submit" value="登録"></p>
 </form>
 <pre>{{user|json}}</pre>
@@ -53,6 +51,7 @@
 <script>
 var mainCtrl = function($scope){
  $scope.addUser = function(){
+
  }
 }
 </script>

@@ -24,4 +24,12 @@ sub setting{
  return $c->render('setting.tx');
 }
 
+use Data::Dumper;
+
+sub hogehoge{
+ my($class,$c,$args) = @_;
+ print Dumper $c->req->parameters;
+ return $c->redirect('setting.tx');
+}
+
 1;
