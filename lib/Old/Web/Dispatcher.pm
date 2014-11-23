@@ -18,8 +18,11 @@ get '/user' => "Root#user";
 
 get '/setting' => "Root#setting";
 
-get '/teacherregister' => "Root#teacherregister";
+get '/teacherregister' => "Teacher#teacherregister";
 
-post '/register' => "Root#register";
+post '/register' => "Teacher#register";
+
+
 
 1;
+
