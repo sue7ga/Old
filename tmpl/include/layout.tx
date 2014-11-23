@@ -38,7 +38,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#">生徒ログイン</a></li>
                     <li><a href="#">家庭教師ログイン</a></li>
-                    <li><a href="#">家庭教師登録</a></li>
+                    <li><a href="/register">家庭教師登録</a></li>
                     <li><a href="#">生徒登録</a></li>
                 </ul>
             </div>
@@ -81,7 +81,7 @@
 
 <p class="sidetitle">家庭教師の先生へ</p>
 <ul class="localnavi">
-  <li><a href="#">家庭教師登録</a></li>
+  <li><a href="/register">家庭教師登録</a></li>
   <li><a href="#">家庭教師ログイン</a></li>
   <li><a href="#">新しく登録される方へ</a></li>
 </ul>

@@ -5,7 +5,7 @@
 <!-- コンテンツ ここから -->
 <h3>家庭教師検索</h3>
 
-<form class="well form-search" method="post" action="<: uri_for('teachers/search'):>">
+<form class="well form-search" method="post" action="<: uri_for('home'):>">
 都道府県：
 <select name="pref_name">
 <option value="" selected>都道府県
@@ -128,7 +128,6 @@
 <td>内容</td>
 <td>内容</td>
 </tr>
-
 
 
 </tbody>

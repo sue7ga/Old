@@ -5,7 +5,7 @@
  <h1>Settings</h1>
 
 <div ng-controller="mainCtrl">
-<form novalidate method="post" name="user" action="<:uri_for('hogehoge/hogehoge'):>">
+<form novalidate method="post" name="user" action="<:uri_for('register'):>">
 <p>Name:
 <input type="text" name="name" ng-model="user.name" ng-init="user.name='hoge'" required ng-minlength="5" ng-maxlength="8"></p>
 <span ng-show="myForm.name.$error.required">Required</span>

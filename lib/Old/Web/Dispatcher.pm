@@ -12,10 +12,14 @@ any '/' => "Root#root";
 
 get '/home' => "Root#home";
 
+post '/home' => "Root#posthome";
+
 get '/user' => "Root#user";
 
 get '/setting' => "Root#setting";
 
-post 'hogehoge/hogehoge' => "Root#hogehoge";
+get '/teacherregister' => "Root#teacherregister";
+
+post '/register' => "Root#register";
 
 1;
