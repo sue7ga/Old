@@ -12,12 +12,12 @@ sub root{
 
 sub home{
  my($class,$c) = @_;
- return $c->render('home.tx');
+ my $teachers = $c->db->latest_teachers();
+ return $c->render('home.tx',{teachers => $teachers});
 }
 
 sub posthome{
-my($class,$c,$args) = @_;
-print Dumper $c->req->parameters;
+ my($class,$c,$args) = @_;
  return $c->render('home.tx');
 }
 

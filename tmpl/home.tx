@@ -88,7 +88,7 @@
 <td>福島</td>
 </tr>
 <tr>
-<td>愛知</td>
+<td>秋田</td>
 <td>岐阜</td>
 <td>静岡</td>
 <td>三重</td>
@@ -96,15 +96,7 @@
 <td>山梨</td>
 </tr>
 <tr>
-<td>内容</td>
-<td>内容</td>
-<td>内容</td>
-<td>内容</td>
-<td>内容</td>
-<td>内容</td>
-</tr>
-<tr>
-<td>内容</td>
+<td>山形</td>
 <td>内容</td>
 <td>内容</td>
 <td>内容</td>
@@ -112,7 +104,15 @@
 <td>内容</td>
 </tr>
 <tr>
+<td>岩手</td>
 <td>内容</td>
+<td>内容</td>
+<td>内容</td>
+<td>内容</td>
+<td>内容</td>
+</tr>
+<tr>
+<td>宮城</td>
 <td>内容</td>
 <td>内容</td>
 <td>内容</td>
@@ -121,7 +121,7 @@
 </tr>
 
 <tr>
-<td>内容</td>
+<td>福島</td>
 <td>内容</td>
 <td>内容</td>
 <td>内容</td>
@@ -144,17 +144,19 @@
 <th>名前</th>
 <th>大学名</th>
 <th>都道府県</th>
-<th>最寄り駅</th>
-<th>希望時給</th>
+<th>指導曜日</th>
+<th>自己紹介</th>
 </tr>
 
+: for $teachers -> $teacher{
 <tr>
-<td>有料</td>
-<td>プロ</td>
-<td>有り</td>
-<td>２１６色</td>
-<td>２１６色</td>
+<td><:$teacher.name:></td>
+<td><:$teacher.school:></td>
+<td><:$teacher.prefecture:></td>
+<td><:$teacher.day:></td>
+<td><:$teacher.profile:></td>
 </tr>
+: }
 
 
 </tbody>

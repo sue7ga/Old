@@ -20,6 +20,14 @@ sub search_all_teachers{
  return $itr;
 }
 
+sub latest_teachers{
+ my($self) = @_;
+ my @rows = $self->search(
+   'teachers',{},{order_by => {'age' => 'DESC'},limit => 10}
+ );
+ return \@rows;
+}
+
 1;
 
 
