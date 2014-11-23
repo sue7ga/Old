@@ -23,7 +23,6 @@ get '/teacherregister' => "Teacher#teacherregister";
 post '/register' => "Teacher#register";
 
 post '/show' => "Teacher#show";
-
 get 'teachers/show' => sub{
  my($c,$args) = @_;
  my $itr = $c->db->search_all_teachers();

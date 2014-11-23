@@ -21,6 +21,9 @@ sub register{
  return $c->redirect('/home');
 }
 
-
+sub show{
+ my($class,$c) = @_;
+ return $c->render('show.tx');
+}
 
 1;

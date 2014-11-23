@@ -14,6 +14,12 @@ sub register_teacher{
  $self->insert('teachers',{email => $args->{email},password=>$args->{password},name => $args->{name},school => $args->{school},age => $args->{age},prefecture=> $args->{prefecture},income => $args->{income},day => $args->{day},teaching => $args->{teaching},profile => $args->{profile},gender => $args->{gender}});
 }
 
+sub search_all_teachers{
+ my ($self) = @_;
+ my $itr =  $self->search('teachers');
+ return $itr;
+}
+
 1;
 
 
