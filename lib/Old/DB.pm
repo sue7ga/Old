@@ -19,6 +19,13 @@ sub search_all_teachers{
  my $itr =  $self->search('teachers');
  return $itr;
 }
+use Data::Dumper;
+
+sub search_teacher_by_id{
+ my($self,$args) = @_;
+ my $itr = $self->single("teachers",{id => $args->{id}});
+ return $itr;
+}
 
 sub latest_teachers{
  my($self) = @_;
@@ -27,6 +34,8 @@ sub latest_teachers{
  );
  return \@rows;
 }
+
+
 
 1;
 

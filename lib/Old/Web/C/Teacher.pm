@@ -21,6 +21,13 @@ sub register{
  return $c->redirect('/home');
 }
 
+sub detail{
+ my($class,$c,$args) = @_;
+ my $itr = $c->db->search_teacher_by_id($args);
+ my $name = $itr->name;
+ return $c->render('detail.tx',{name => $name});
+}
+
 sub show{
  my($class,$c) = @_;
  return $c->render('show.tx');

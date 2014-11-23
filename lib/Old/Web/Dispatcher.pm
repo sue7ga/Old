@@ -34,4 +34,6 @@ get 'teachers/show' => sub{
  return $c->render_json($teachers);
 };
 
+get 'teacher/show/:id' => "Teacher#detail";
+
 1;
