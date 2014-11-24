@@ -33,4 +33,25 @@ sub show{
  return $c->render('show.tx');
 }
 
+sub pref1{
+ my($class,$c) = @_;
+ return $c->render('pref1.tx');
+}
+
+sub pref2{
+ my($class,$c) = @_;
+ return $c->render('pref2.tx');
+}
+
+sub prefshow{
+ my($class,$c,$args) = @_;
+ my $itr = $c->db->search_teacher_by_prefid($args);
+ my $teachers = [];
+ while(my $row = $itr->next){
+    push @$teachers,{id => $row->id,name => $row->name,prefecture => $row->prefecture};
+ } 
+ return $c->render_json($teachers);
+}
+
+
 1;

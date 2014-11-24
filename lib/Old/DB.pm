@@ -10,7 +10,6 @@ __PACKAGE__->load_plugin('Pager');
 
 sub register_teacher{
  my($self,$args) = @_;
- print Dumper $args;
  $self->insert('teachers',{email => $args->{email},password=>$args->{password},name => $args->{name},school => $args->{school},age => $args->{age},prefecture=> $args->{prefecture},income => $args->{income},day => $args->{day},teaching => $args->{teaching},profile => $args->{profile},gender => $args->{gender}});
 }
 
@@ -27,6 +26,15 @@ sub search_teacher_by_id{
  return $itr;
 }
 
+sub search_teacher_by_prefid{
+ my($self,$args) = @_;
+ my %pref =(1 => '神奈川県',2 => '長野県');
+ my $prefname = $pref{$args->{id}};
+ my $preitr = $self->single('teachers',+{prefecture =>$prefname},+{columns => [qw/prefecture/]});
+ my $itr = $self->search('teachers',{prefecture => $preitr->prefecture});
+ return $itr;
+}
+
 sub latest_teachers{
  my($self) = @_;
  my @rows = $self->search(
@@ -34,8 +42,6 @@ sub latest_teachers{
  );
  return \@rows;
 }
-
-
 
 1;
 

@@ -24,6 +24,12 @@ post '/register' => "Teacher#register";
 
 post '/show' => "Teacher#show";
 
+get '/pref1' => "Teacher#pref1";
+get '/pref2' => "Teacher#pref2";
+
+get '/home/pref/:id' => "Teacher#prefshow";
+
+
 get 'teachers/show' => sub{
  my($c,$args) = @_;
  my $itr = $c->db->search_all_teachers();
