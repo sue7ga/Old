@@ -89,7 +89,7 @@ sub prefshow{
 sub showlist{
  my ($class,$c,$args) = @_;
  my $student = $c->db->search_student_by_id($args);
- return $c->render('showlist.tx',{name => $student->name});
+ return $c->render('showlist.tx',{name => $student->name,age => $student->name,school => $student->school,prefecture => $student->prefecture,email => $student->email,income => $student->income,profile => $student->profile,gender => $student->gender});
 }
 
 1;
