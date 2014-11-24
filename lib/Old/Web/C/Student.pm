@@ -21,5 +21,27 @@ sub postregister{
  return $c->redirect('/student/register');
 }
 
+sub login{
+ my($class,$c) = @_;
+ return $c->render('student_login.tx');
+}
+
+sub postlogin{
+ my($class,$c) = @_;
+ my $param = $c->req->parameters;
+ my $itr = $c->db->get_student_by_email($param);
+ if($itr->password eq $param->{key}){
+    $c->session->set('student' => 1);    
+    return $c->render('student_home.tx');
+ }else{
+  return $c->redirect('/student/register');
+ }
+}
+
+sub logout{
+ my($class,$c) = @_;
+ $c->session->set('student' => 0);
+ return $c->redirect('/student/login');
+}
 
 1;

@@ -1,0 +1,6 @@
+: cascade "include/student_mypage.tx"
+
+: override content -> {
+
+
+:}

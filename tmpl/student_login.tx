@@ -2,7 +2,7 @@
 
 : override content -> {
 
-<form method="post" action="<: uri_for('teacher/login/post') :>">
+<form method="post" action="<: uri_for('student/login/post') :>">
 <dl>
 <dt>email</dt>
 <dd><input type="text" name="email" size="80" class="validate required"></dd>

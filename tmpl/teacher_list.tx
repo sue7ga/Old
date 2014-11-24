@@ -1,4 +1,4 @@
-: cascade "include/layout.tx"
+: cascade "include/mypage.tx"
 
 : override content -> {
 
@@ -14,12 +14,12 @@
 <th>高校</th>
 <th>詳細を見る</th>
 </tr>
-<tr ng-repeat="teacher in teachers | filter:query">
-<td> {{ teacher.name }}</td>
-<td> {{ teacher.gender }}</td>
-<td> {{ teacher.prefecture }}</td>
-<td> {{ teacher.school }}</td>
-<td><a href="/teacher/show/{{teacher.id}}">詳細を見る</a></td>
+<tr ng-repeat="student in students | filter:query">
+<td> {{ student.name }}</td>
+<td> {{ student.gender }}</td>
+<td> {{ student.prefecture }}</td>
+<td> {{ student.school }}</td>
+<td><a href="/student/show/{{student.id}}">詳細を見る</a></td>
 </tr>
 </table>
 </div>
@@ -28,8 +28,8 @@
 </div>
 <script>
 var loopCtrl = function($scope,$http) {
- $http.get("teachers/show").success(function(data,status,headers,config){
- $scope.teachers = data; }); }
+ $http.get("/students/show").success(function(data,status,headers,config){
+ $scope.students = data; }); }
  $(".modal-open").on("click",function(e){ alert('hoge'); var $el =
  $(e.target); var studentid = $el.val();
  $("body").append('<div id="modal-overlay"></div>');
@@ -38,3 +38,20 @@ var loopCtrl = function($scope,$http) {
 </script>
 
 :}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

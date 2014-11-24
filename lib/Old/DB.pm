@@ -53,6 +53,12 @@ sub get_teacher_by_email{
  return $itr;
 }
 
+sub get_student_by_email{
+ my($self,$param) = @_;
+ my $itr = $self->single('students',+{email => $param->{email}},+{columns => [qw/password/]});
+ return $itr;
+}
+
 sub latest_teachers{
  my($self) = @_;
  my @rows = $self->search(
@@ -63,7 +69,6 @@ sub latest_teachers{
 
 sub register_student{
  my($self,$args) = @_;
- print Dumper $args;
  $self->insert('students',{email => $args->{email},password=>$args->{password},name => $args->{name},school => $args->{school},age => $args->{age},prefecture=> $args->{prefecture},income => $args->{income},day => $args->{day},income => $args->{income},profile => $args->{profile},gender => $args->{gender}});
 }
 

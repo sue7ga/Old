@@ -30,6 +30,8 @@ get '/search' => "Teacher#search";
 
 get '/teacher/login' => "Teacher#login";
 
+get '/teachers/list' => "Teacher#teacherlist";
+
 get '/pref1' => "Teacher#pref1";
 
 get '/pref2' => "Teacher#pref2";
@@ -40,25 +42,30 @@ post 'teacher/login/post' => "Teacher#postlogin";
 
 get '/teacher/logout' => "Teacher#logout";
 
-get 'students/list' => "Teacher#list";
+get 'students/list' => "Teacher#studentslist";
 
 get 'student/list/:id' => "Teacher#showlist";
+
+use Data::Dumper;
 
 get 'students/show' => sub{
  my($c,$args) = @_;
  my $itr = $c->db->search_all_students();
  my $students= [];
  while(my $row = $itr->next){
+ print Dumper $row->name;
    push @$students,{id => $row->id,name => $row->name,gender=> $row->gender,school => $row->school,prefecture => $row->prefecture};
  }
  return $c->render_json($students);
 };
 
-get 'teacher/show' => sub{
+
+get 'teachers/show' => sub{
  my($c,$args) = @_;
- my $itr = $c->db->search_all_students();
+ my $itr = $c->db->search_all_teachers();
  my $teachers = [];
  while(my $row = $itr->next){
+ print Dumper $row->name;
    push @$teachers,{id => $row->id,name => $row->name,gender=> $row->gender,school => $row->school,prefecture => $row->prefecture};
  }
  return $c->render_json($teachers);
@@ -71,5 +78,11 @@ get 'teacher/show/:id' => "Teacher#detail";
 get 'student/register' => "Student#register";
 
 post 'student/post/register' => "Student#postregister";
+
+get 'student/login' => "Student#login";
+
+post 'student/login/post' => "Student#postlogin";
+
+get 'student/logout' => "Student#logout";
 
 1;

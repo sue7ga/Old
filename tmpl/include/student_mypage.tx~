@@ -36,10 +36,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">生徒ログイン</a></li>
-                    <li><a href="#">家庭教師ログイン</a></li>
-                    <li><a href="/teacherregister">家庭教師登録</a></li>
-                    <li><a href="#">生徒登録</a></li>
+                    <li><a href="/teachers/list">教師一覧</a></li>
+                    <li><a href="#">担当教師</a></li>
+                    <li><a href="/teacher/calendar">指導日カレンダー</a></li>
+                    <li><a href="/teacher/logout">Logout</a></li>
                 </ul>
             </div>
         </div><!-- /.container -->
@@ -71,19 +71,10 @@
 
 <div id="sidebar">
 <!-- サイドバー ここから -->
-<p class="sidetitle">保護者の方こちら</p>
-<ul class="localnavi">
-  <li><a href="/student/register">生徒登録</a></li>
-  <li><a href="/student/login">生徒ログイン</a></li>
-  <li><a href="/search">教師検索</a></li>
-  <li><a href="#">新しく登録される方へ</a></li>
-</ul>
 
 <p class="sidetitle">家庭教師の先生へ</p>
 <ul class="localnavi">
-  <li><a href="/teacherregister">家庭教師登録</a></li>
-  <li><a href="/teacher/login">家庭教師ログイン</a></li>
-  <li><a href="#">新しく登録される方へ</a></li>
+
 </ul>
 <!-- サイドバー ここまで -->
 </div><!-- / sidebar end -->

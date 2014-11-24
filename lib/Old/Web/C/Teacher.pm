@@ -92,4 +92,14 @@ sub showlist{
  return $c->render('showlist.tx',{name => $student->name,age => $student->name,school => $student->school,prefecture => $student->prefecture,email => $student->email,income => $student->income,profile => $student->profile,gender => $student->gender});
 }
 
+sub teacherlist{
+ my($class,$c) = @_;
+ return $c->render('teacher_list.tx');
+}
+
+sub studentslist{
+ my($class,$c) = @_;
+ return $c->render('student_list.tx');
+}
+
 1;

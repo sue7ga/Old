@@ -1,4 +1,4 @@
-: cascade "include/layout.tx"
+: cascade "include/mypage.tx"
 
 : override content -> {
 
@@ -28,13 +28,30 @@
 </div>
 <script>
 var loopCtrl = function($scope,$http) {
- $http.get("teachers/show").success(function(data,status,headers,config){
+ $http.get("/teachers/show").success(function(data,status,headers,config){
  $scope.teachers = data; }); }
  $(".modal-open").on("click",function(e){ alert('hoge'); var $el =
- $(e.target); var studentid = $el.val();
+ $(e.target); var teacherid = $el.val();
  $("body").append('<div id="modal-overlay"></div>');
  $("#modal-overlay").fadeIn("slow");
- $("#modal-overlay").fadeOut("slow"); alert(studentid); });
+ $("#modal-overlay").fadeOut("slow"); alert(teacherid); });
 </script>
 
 :}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
