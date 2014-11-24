@@ -3,11 +3,10 @@
 : override content -> {
 
 
-     <:$name:>
 <table summary="会社案内表">
   <tr>
-    <th class="t_top" width="180">会社名</th>
-    <td class="t_top">株式会社○○○</td>
+    <th class="t_top" width="180">名前</th>
+    <td class="t_top"><:$name:></td>
   </tr>
   <tr>
     <th>Email</th>
@@ -15,23 +14,23 @@
   </tr>
   <tr>
     <th>大学名</th>
-    <td>〒000-0000　東京都新宿区西新宿00-00</td>
+    <td><:$school:></td>
   </tr>
   <tr>
     <th>年齢</th>
-    <td>000-0000-0000</td>
+    <td><:$age:></td>
   </tr>
   <tr>
     <th>都道府県</th>
-    <td>000@000.com</td>
+    <td><:$prefecture:></td>
   </tr>
   <tr>
     <th>自己紹介</th>
-    <td>000@000.com</td>
+    <td><:$profile:></td>
   </tr>
   <tr>
     <th>性別</th>
-    <td>000@000.com</td>
+    <td><:$gender:></td>
   </tr>
 </table>
 

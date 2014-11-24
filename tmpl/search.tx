@@ -1,0 +1,11 @@
+: cascade "include/layout.tx"
+
+: override content -> {
+
+
+<form class="well form-search" method="post" action="<: uri_for('show'):>">
+<button type="submit" class="btn btn-success"> 家庭教師を検 索する </button>
+</form>
+
+
+:}

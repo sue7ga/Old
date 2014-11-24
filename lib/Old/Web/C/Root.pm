@@ -41,7 +41,6 @@ use Data::Dumper;
 
 sub register{
  my($class,$c,$args) = @_;
- print Dumper $c->req->parameters;
  return $c->redirect('setting.tx');
 }
 

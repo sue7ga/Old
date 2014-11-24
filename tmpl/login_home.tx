@@ -1,0 +1,14 @@
+: cascade "include/mypage.tx"
+
+: override content -> {
+
+  Login!SuccessFul!
+
+:}
+
+
+
+
+
+
+

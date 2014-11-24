@@ -24,8 +24,30 @@ sub register{
 sub detail{
  my($class,$c,$args) = @_;
  my $itr = $c->db->search_teacher_by_id($args);
- my $name = $itr->name;
- return $c->render('detail.tx',{name => $name});
+ return $c->render('detail.tx',{name => $itr->name,prefecture => $itr->prefecture,email => $itr->email,school => $itr->school,age => $itr->age,profile =>$itr->profile,gender => $itr->gender});
+}
+
+sub search{
+ my($class,$c) = @_;
+ return $c->render('search.tx');
+}
+
+sub list{
+ my($class,$c) = @_;
+ return $c->render('list.tx');
+}
+
+sub postlogin{
+ my($class,$c) = @_;
+ my $param =   $c->req->parameters;
+ my $teacher = $c->db->get_teacher_by_email($param);
+ if($teacher->password eq $param->{key}){
+  $c->session->set('teacher' => 1);
+  print Dumper $c->session->get('teacher');
+  return $c->render('login_home.tx');
+ }else{
+  return $c->redirect('/teacher/login');
+ }
 }
 
 sub show{
@@ -41,6 +63,17 @@ sub pref1{
 sub pref2{
  my($class,$c) = @_;
  return $c->render('pref2.tx');
+}
+
+sub login{
+ my($class,$c) = @_;
+ return $c->render('login.tx');
+}
+
+sub logout{
+ my($class,$c) = @_;
+ $c->session->set('teacher'=> 0);
+ return $c->redirect('/teacher/login')
 }
 
 sub prefshow{

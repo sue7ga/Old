@@ -18,6 +18,12 @@ sub search_all_teachers{
  my $itr =  $self->search('teachers');
  return $itr;
 }
+
+sub search_all_students{
+ my ($self) = @_;
+ my $itr =  $self->search('students');
+ return $itr;
+}
 use Data::Dumper;
 
 sub search_teacher_by_id{
@@ -35,6 +41,12 @@ sub search_teacher_by_prefid{
  return $itr;
 }
 
+sub get_teacher_by_email{
+ my($self,$param) = @_;
+ my $itr = $self->single('teachers',+{email => $param->{email}},+{columns => [qw/password/]});
+ return $itr;
+}
+
 sub latest_teachers{
  my($self) = @_;
  my @rows = $self->search(
@@ -42,6 +54,13 @@ sub latest_teachers{
  );
  return \@rows;
 }
+
+sub register_student{
+ my($self,$args) = @_;
+ print Dumper $args;
+ $self->insert('students',{email => $args->{email},password=>$args->{password},name => $args->{name},school => $args->{school},age => $args->{age},prefecture=> $args->{prefecture},income => $args->{income},day => $args->{day},income => $args->{income},profile => $args->{profile},gender => $args->{gender}});
+}
+
 
 1;
 
