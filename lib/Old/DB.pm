@@ -32,6 +32,12 @@ sub search_teacher_by_id{
  return $itr;
 }
 
+sub search_student_by_id{
+ my($self,$args) = @_;
+ my $itr = $self->single("students",{id => $args->{id}});
+ return $itr;
+}
+
 sub search_teacher_by_prefid{
  my($self,$args) = @_;
  my %pref =(1 => '神奈川県',2 => '長野県');

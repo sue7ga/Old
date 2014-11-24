@@ -1,0 +1,8 @@
+: cascade "include/mypage.tx";
+
+: override content -> {
+
+ <:$name:>
+
+:}
+

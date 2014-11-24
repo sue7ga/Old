@@ -42,6 +42,8 @@ get '/teacher/logout' => "Teacher#logout";
 
 get 'students/list' => "Teacher#list";
 
+get 'student/list/:id' => "Teacher#showlist";
+
 get 'students/show' => sub{
  my($c,$args) = @_;
  my $itr = $c->db->search_all_students();

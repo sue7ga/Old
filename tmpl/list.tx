@@ -17,7 +17,7 @@
 <td> {{ student.gender }}</td>
 <td> {{ student.prefecture }}</td>
 <td> {{ student.school }}</td>
-<td><a href="/student/show/{{student.id}}">詳細を見る</a></td>
+<td><a href="/student/list/{{student.id}}">詳細を見る</a></td>
 </tr>
 </table>
 </div>
@@ -26,7 +26,7 @@
 </div>
 <script>
 var loopCtrl = function($scope,$http) {
- $http.get("students/show").success(function(data,status,headers,config){
+ $http.get("/students/show").success(function(data,status,headers,config){
  $scope.students = data;
 });
 }

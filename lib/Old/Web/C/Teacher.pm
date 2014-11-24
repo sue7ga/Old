@@ -86,5 +86,10 @@ sub prefshow{
  return $c->render_json($teachers);
 }
 
+sub showlist{
+ my ($class,$c,$args) = @_;
+ my $student = $c->db->search_student_by_id($args);
+ return $c->render('showlist.tx',{name => $student->name});
+}
 
 1;
